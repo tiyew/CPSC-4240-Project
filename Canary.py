@@ -36,7 +36,7 @@ else:
             found.append(line)
     
     email = EmailMessage()
-    email.set_content("Hello user \n unfourtnaetly these files: %s were opened on your system, if this wasn't you please take the proper steps to secure your system",found)
+    email.set_content("Hello user \n unfourtnaetly these files: %s were opened on your system, if this wasn't you please take the proper steps to secure your system",' '.join(str(substr) for substr in found))
     email['Subject'] = "Your Token Report"
     email['From'] = "ouremail@user.com" #The example Email will go here 
     email['To'] = user_email #The users Email will go here
